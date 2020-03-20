@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const redis = require('redis');
+const socketIO = require('socket.io');
+const http = require('http');
 
 const redisURL = process.env.REDIS_URL || 'redis://localhost:6379';
 
@@ -24,6 +26,13 @@ const init = async () => {
   const db = await connectDb();
 
   const app = express();
+  const server = http.Server(app);
+  const io = socketIO(server);
+
+  io.on('connection', socket => {
+    io.emit('hi');
+  });
+
   app.use(express.static(path.join(__dirname, '/public')));
 
   db.incr('pod_index');
