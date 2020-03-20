@@ -31,10 +31,6 @@ const init = async () => {
   const io = socketIO(server);
   io.adapter(redisAdapter(redisURL));
 
-  io.on('connection', socket => {
-    io.emit('hi');
-  });
-
   app.use(express.static(path.join(__dirname, '/public')));
 
   db.incr('pod_index');
@@ -50,6 +46,10 @@ const init = async () => {
       time: Date.now(),
       podIndex,
     });
+  });
+
+  io.on('connection', socket => {
+    io.emit('new', podIndex);
   });
 
   const port = 3000;
