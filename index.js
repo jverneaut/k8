@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const redis = require('redis');
-const client = redis.createClient();
+// const client = redis.createClient();
 
 const init = async () => {
   const app = express();
