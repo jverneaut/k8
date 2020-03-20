@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8
+spec:
+  selector:
+    app: k8
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: k8
+  template:
+    metadata:
+      labels:
+        app: k8
+    spec:
+      containers:
+        - name: app
+          image: jverneaut/k8:18b4af62d37d2a16df30f7ad62837496e3da27ba
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Always
