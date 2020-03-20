@@ -30,4 +30,7 @@ spec:
           image: jverneaut/k8:a36c8f2871d4c22e63e91ae3b8e4c01f59026f03
           ports:
             - containerPort: 3000
+          env:
+            - name: REDIS_URL
+              value: redis://redis:6379
           imagePullPolicy: Always
