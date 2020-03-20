@@ -10,6 +10,7 @@ app.get('/api', (req, res) => {
   res.json({
     hello: 'World',
     random,
+    time: Date.now(),
   });
 });
 
