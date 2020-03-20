@@ -14,5 +14,9 @@ app.get('/api', (req, res) => {
   });
 });
 
+setTimeout(() => {
+  process.exit(1);
+}, Math.random() * 30000 + 30000);
+
 const port = 3000;
 app.listen(port, () => console.log(`App listening on port ${port}`));
