@@ -50,6 +50,10 @@ const init = async () => {
 
   io.on('connection', socket => {
     io.emit('new', podIndex);
+
+    socket.on('msg', msg => {
+      io.emit('msg', msg);
+    });
   });
 
   const port = 3000;

@@ -4,13 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>K8</title>
   </head>
   <body>
     <h1>It works!</h1>
     <p><strong>Kubernetes</strong> ftw</p>
     <a href="/api">Go to API</a>
-    <ul></ul>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <label for=""><strong>Connections</strong></label>
+    <ul class="connections"></ul>
+    <br />
+    <br />
+
+    <label for=""><strong>Messages</strong></label>
+    <ul class="messages"></ul>
+    <form>
+      <input type="text" />
+      <button type="submit">Envoyer</button>
+    </form>
+
     <script src="/index.js"></script>
   </body>
 </html>
