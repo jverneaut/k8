@@ -1,4 +1,5 @@
-const socket = io();
+const socket = io.connect();
+
 socket.on('hi', () => {
   const el = document.createElement('li');
   el.innerHTML = 'New connection';
