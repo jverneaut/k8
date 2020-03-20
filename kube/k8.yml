@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: k8
 spec:
-  replicas: 6
+  replicas: 1
   selector:
     matchLabels:
       app: k8
@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: jverneaut/k8:8daaa8e939d9dce1e19259c76122ea84e53e26c0
+          image: jverneaut/k8:46547a2c1ea4d839f49b7b058ea2a6faf3b4644c
           ports:
             - containerPort: 3000
           imagePullPolicy: Always
