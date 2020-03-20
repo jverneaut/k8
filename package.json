@@ -1,0 +1,22 @@
+{
+  "name": "k8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jverneaut/k8.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jverneaut/k8/issues"
+  },
+  "homepage": "https://github.com/jverneaut/k8#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
