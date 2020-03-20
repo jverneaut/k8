@@ -3,6 +3,7 @@ const path = require('path');
 const redis = require('redis');
 const socketIO = require('socket.io');
 const http = require('http');
+const redisAdapter = require('socket.io-redis');
 
 const redisURL = process.env.REDIS_URL || 'redis://localhost:6379';
 
@@ -28,6 +29,7 @@ const init = async () => {
   const app = express();
   const server = http.Server(app);
   const io = socketIO(server);
+  io.adapter(redisAdapter(redisURL));
 
   io.on('connection', socket => {
     io.emit('hi');
