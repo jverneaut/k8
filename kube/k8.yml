@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: jverneaut/k8:a36c8f2871d4c22e63e91ae3b8e4c01f59026f03
+          image: jverneaut/k8:811d56f725ccab838b755ebfd6d2c26dd1b30620
           ports:
             - containerPort: 3000
           env:
