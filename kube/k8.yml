@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: k8
 spec:
-  replicas: 4
+  replicas: 10
   selector:
     matchLabels:
       app: k8
