@@ -7,18 +7,18 @@ const init = async () => {
   const app = express();
   app.use(express.static(path.join(__dirname, '/public')));
 
-  client.incr('pod_index');
-  const podIndex = await new Promise(resolve => {
-    client.get('pod_index', (err, reply) => {
-      resolve(reply);
-    });
-  });
+  // client.incr('pod_index');
+  // const podIndex = await new Promise(resolve => {
+  //   client.get('pod_index', (err, reply) => {
+  //     resolve(reply);
+  //   });
+  // });
 
   app.get('/api', async (req, res) => {
     res.json({
       hello: 'World',
       time: Date.now(),
-      podIndex,
+      // podIndex,
     });
   });
 
